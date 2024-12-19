@@ -9,10 +9,12 @@ lazy val root = (project in file("."))
   .settings(
     name := "spark-graphx",
     libraryDependencies ++= Seq(
-
       "org.apache.spark" %% "spark-graphx" % "4.0.0-preview2" exclude("com.esotericsoftware", "kryo"),
-      "org.apache.spark" %% "spark-sql" % "4.0.0-preview2",
+      "org.apache.spark" %% "spark-sql" % "4.0.0-preview2" exclude("com.esotericsoftware", "kryo"),
+      "org.apache.spark" %% "spark-mllib" % "4.0.0-preview2" exclude("com.esotericsoftware", "kryo"),
       "com.esotericsoftware" % "kryo" % "4.0.2",
-      "graphframes" % "graphframes" % "0.8.4-spark3.5-s_2.13"
+      "graphframes" % "graphframes" % "0.8.4-spark3.5-s_2.13",
+      "org.scalanlp" %% "breeze" % "2.1.0",
+      "org.scalanlp" %% "breeze-viz" % "2.1.0"
     )
   )
